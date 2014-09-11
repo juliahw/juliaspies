@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Julia's Pies</title>
+    <link rel="stylesheet" href="courier_prime/courier_prime.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!--  Header Begin  -->
+        <div class='container' id='header'>
+            <h1>Julia's Pies</h1>
+            <img id='logo' src="img/logo.png" alt="logo">
+        </div>
+        <!--  Header End  -->
+
+        <div id="main">
+
+            <!--  Content Begin  -->
+            <div class='container' id='blurb'>
+                <p id='contact'>
+                    <span id='phone'>T: 925.577.4214&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span id='email'>E: juliahw@princeton.edu</span>
+                </p>
+
+                <p>Hi there! I'm Julia. I bake fresh, handmade, delicious pies. RCAs: give me <b>a week's notice</b> and I will make pies for your study breaks. Everyone else: pie services for you are coming soon! Contact me anytime for the deets.</p>
+
+                <p><b>Rates:</b> $15 per 9" pie
+                    <br>
+                    <b>On the Menu:</b> Double-Crust Apple, Classic Pumpkin
+                </p>
+
+            </div>
+            <!--  Content End  -->
+
+            <!--  Quote Bar Begin  -->
+            <div class='container' id='quotes'>
+                <div id="quotetxt"></div>
+                <div id="quoteimg"></div>
+            </div>
+            <!--  Quote Bar End  -->
+
+        </div>
+    </div>
+
+    <!--  Footer Begin  -->
+    <div id="footer">
+        <div id="zigzag"></div>
+    </div>
+    <!--  Footer End  -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/quotes.js"></script>
+    <script type="text/javascript">
+        var $quotetxt = $('#quotetxt'),
+            $quoteimg = $('#quoteimg'),
+            $quotes = $('#quotes');
+
+        var i = Math.floor(Math.random() * quotes.length);
+
+        function showQuote() {
+            $quotetxt.html("<p>" + quotes[i].quote + "<br><br>" + quotes[i].author + "</p>");
+            $quoteimg.html("<img src='" + quotes[i].url + "'>");
+            i = (i < quotes.length - 1) ? (i + 1) : 0;
+            $quotes
+                .fadeTo(1000, 1)
+                .delay(4500)
+                .fadeTo(1000, 0, showQuote);
+        }
+        showQuote();
+    </script>
+</body>
+
+</html>
