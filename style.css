@@ -97,20 +97,19 @@ p {
 html,
 body {
     height: 100%;
-    overflow: hidden;
 }
 #wrap {
     min-height: 100%;
 }
 #main {
     overflow: auto;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 #footer {
     background: #d2cbbf;
     clear: both;
-    margin-top: -2em;
-    height: 2em;
+    margin-top: -1em;
+    height: 1em;
 }
 #zigzag {
     position: relative;
@@ -121,5 +120,4 @@ body {
     background-size: 32px 32px;
     height: 32px;
     width: 100%;
-    margin-top: 1em;
 }
