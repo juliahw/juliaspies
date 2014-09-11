@@ -6,7 +6,6 @@ body {
     margin: 0;
     font-family: courier_primeregular, Courier, monospace;
     color: #706149;
-    overflow: hidden;
 }
 h1 {
     font-size: 2.5em;
@@ -23,7 +22,7 @@ p {
     padding: 0.75em 0;
 }
 #header {
-    padding-top: 1.5em;
+    padding-top: 1em;
     text-align: center;
 }
 #logo {
@@ -81,11 +80,13 @@ p {
     }
     #quotes {
         display: none !important;
+        height: 0;
     }
 }
 @media all and (max-height: 35em) {
-    #quotes, #footer {
+    #quotes {
         display: none !important;
+        height: 0;
     }
 }
 
@@ -96,6 +97,7 @@ p {
 html,
 body {
     height: 100%;
+    overflow: hidden;
 }
 #wrap {
     min-height: 100%;
@@ -119,4 +121,5 @@ body {
     background-size: 32px 32px;
     height: 32px;
     width: 100%;
+    margin-top: 1em;
 }
