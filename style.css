@@ -14,6 +14,13 @@ h1 {
 p {
     font-size: 0.9em;
 }
+a:link, a:visited {
+    color: #a09179;
+}
+a:hover, a:active {
+    color: #504129;
+    text-decoration: none;
+}
 .container {
     width: 500px;
     height: auto;
