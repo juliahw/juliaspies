@@ -3,76 +3,68 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Julia's Pies</title>
-    <link rel="stylesheet" href="courier_prime/courier_prime.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="wrap">
-
-        <!--  Header Begin  -->
-        <div class='container' id='header'>
-            <h1>Julia's Pies</h1>
-            <img id='logo' src="img/logo.png" alt="logo">
-        </div>
-        <!--  Header End  -->
-
-        <div id="main">
-
-            <!--  Content Begin  -->
-            <div class='container' id='blurb'>
-                <p id='contact'>
-                    <span id='phone'>T: 925.577.4214&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span id='email'>E: juliahw@princeton.edu</span>
-                </p>
-
-                <p>Hi there! I'm Julia. I bake pies. Every pie I make is deliciously flaky, golden, and made <b>completely from scratch</b>. Give me <b>a week's notice</b> and I will make pies for your study breaks! Delivery included. <a href="https://docs.google.com/a/princeton.edu/forms/d/1Bsh6ue4Y7h1uwW0o7vk-9A8oaBUbQS6Ucg5Vu30dri0/viewform?usp=send_form" target="_blank">Order here</a> or contact me anytime for more details.</p>
-
-                <p><b>Rates:</b> $16 per 9" pie
-                    <br>
-                    <b>On the Menu:</b> Double-Crust Apple, Classic Pumpkin
-                </p>
-
-            </div>
-            <!--  Content End  -->
-
-            <!--  Quote Bar Begin  -->
-            <div class='container' id='quotes'>
-                <div id="quotetxt"></div>
-                <div id="quoteimg"></div>
-            </div>
-            <!--  Quote Bar End  -->
-
+    <div id="header" class="container-fluid">
+        <img src="img/logo.png" alt="logo" id="logo" class="img-responsive">
+        
+        <div id="menu" class="container-fluid text-center">
+            <a href="http://goo.gl/forms/2StCv3IBSp" target="_blank" id="menu_order"><b>ORDER</b></a>
+            <span>&nbsp;&bull;&nbsp;</span>
+            <a href="#" id="menu_menu"><b>ON THE MENU</b></a>
+            <span>&nbsp;&bull;&nbsp;</span>
+            <a href="#" id="menu_about"><b>ABOUT</b></a>
         </div>
     </div>
 
-    <!--  Footer Begin  -->
-    <div id="footer">
-        <div id="zigzag"></div>
+    <div id="home" class="container-fluid text-center">
+        <div id="carousel">
+            <img src="img/pie3.jpg" class="carouselimg roundleft"><img src="img/pecan_pies.jpg" class="carouselimg"><img src="img/pie2.jpg" class="carouselimg roundright">
+        </div>
+        <div id="circles">
+        </div>
     </div>
-    <!--  Footer End  -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/quotes.js"></script>
-    <script type="text/javascript">
-        var $quotetxt = $('#quotetxt'),
-            $quoteimg = $('#quoteimg'),
-            $quotes = $('#quotes');
+    <div id="onthemenu" class="container-fluid text-center">
+        <h1><b>THE CLASSICS</b></h1>
+        <ul>
+            <li>Pumpkin Pie</li>
+            <li>Double-Crust Apple Pie</li>
+        </ul>
 
-        var i = Math.floor(Math.random() * quotes.length);
+        <h1><b>THE SEASONAL SPECIALTY</b></h1>
+        <ul>
+            <li>Pecan Pie <b>*NEW!*</b></li>
+        </ul>
 
-        function showQuote() {
-            $quotetxt.html("<p>" + quotes[i].quote + "<br><br>" + quotes[i].author + "</p>");
-            $quoteimg.html("<img src='" + quotes[i].url + "'>");
-            i = (i < quotes.length - 1) ? (i + 1) : 0;
-            $quotes
-                .fadeTo(1000, 1)
-                .delay(4500)
-                .fadeTo(1000, 0, showQuote);
-        }
-        showQuote();
-    </script>
+        <h1><b>RATES</b></h1>
+        <p>$16 per 9" pie, delivery included</p>
+
+        <p class="smalltext">* Please order at least 3 days in advance. Thank you!</p>
+    </div>
+
+    <div id="about" class="container-fluid text-center">
+        <div class="col-md-4 col-md-offset-4">
+            <p><span>Hi there! I'm Julia.</span>
+            </p>
+
+            <p>Julia’s Pies is the product of my long obsession with pie, the ultimate dessert. Every pie you order from me will be deliciously flaky, golden, and made 100% from scratch. Delivery included.<span>&nbsp;Enjoy!</span>
+            </p>
+
+            <p>Contact me at <span id='phone'>925.577.4214</span> or <span id='email'>juliahw@princeton.edu</span>.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/velocity.min.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
