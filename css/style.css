@@ -43,14 +43,6 @@ ul {
 .currentcircle {
     background: #bf6318;
 }
-.roundleft {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.roundright {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
 #menu {
     max-width: 100%;
 }
@@ -83,8 +75,7 @@ ul {
     overflow: hidden;
     width: 100%;
 }
-.carouselimg,
-.carouselimgrpt {
+.carouselimg {
     position: relative;
     left: -25%;
     width: 50%;
@@ -97,9 +88,7 @@ ul {
 .carouselimg {
     display: inline-block;
     cursor: pointer;
-}
-.carouselimgrpt {
-    display: none;
+    border-radius: 10px;
 }
 .carouselimg:hover {
     -webkit-transform: scale(1.1);
@@ -117,9 +106,5 @@ ul {
     .carouselimg {
         width: 100%;
         left: -100%;
-    }
-    .roundleft,
-    .roundright {
-        border-radius: 0;
     }
 }
