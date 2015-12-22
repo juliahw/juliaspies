@@ -1,4 +1,4 @@
-juliaspies
+Julia's Pies
 ==========
 
-A webpage for Julia's Pies, a hungry Princeton student's pie catering business.
+A website for Julia's Pies, my pie catering business.
