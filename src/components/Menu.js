@@ -32,6 +32,8 @@ const Menu = () => (
         <p>
           4" whole tarts. Pickup only.*
           <br />
+          Cash on pickup or Venmo @juliahw
+          <br />
           855 Brannan St, San Francisco, CA 94103
           <br />
           Available February 13-17, noon-10pm
