@@ -72,6 +72,16 @@ p {
   font-size: 1rem;
 }
 
+a {
+  color: $red;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    border-bottom: 1px solid $red;
+  }
+}
+
 .nav-link {
   color: $brown;
   font-family: $heading-font-family;
@@ -106,12 +116,13 @@ img {
   margin: 15px;
   padding: 15px 30px;
   border-radius: 30px;
-  background-color: $red;
-  cursor: pointer;
+  background-color: $brown;
+  // background-color: $red;
+  // cursor: pointer;
 
-  &:hover {
-    background-color: $brown;
-  }
+  // &:hover {
+  //   background-color: $brown;
+  // }
 }
 
 @media only screen and (max-width: 60em) {

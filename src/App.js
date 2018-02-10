@@ -5,6 +5,8 @@ import cx from 'classnames'
 import Menu from './components/Menu'
 // import Contact from './components/Contact'
 
+const FACEBOOK_LINK = 'https://www.facebook.com/juliamakespies'
+
 class App extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -41,7 +43,7 @@ class App extends React.Component {
           <div className="col-2"></div>
           <div className="col-8 center">
             <p>
-              Roses are so 2017. This Valentine's Day, give the gift of <span className="text-red">Julia's Pies</span> Valentine's Day tarts. They're beautiful, delicious, and won't leave sad petals all over your kitchen table in 3 days.
+              Sorry, I'm all sold out! Be the first to hear about future pies by liking my <a href={FACEBOOK_LINK} target="_blank">Facebook page</a>! :)
             </p>
           </div>
         </div>

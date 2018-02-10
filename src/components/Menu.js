@@ -25,8 +25,8 @@ const Menu = () => (
     <div className="row">
       <div className="col-2"></div>
       <div className="col-8 center">
-        <div className="btn" onClick={() => window.open(ORDER_FORM_LINK, '_blank')}>
-          <h2 className="text-white">Order Now</h2>
+        <div className="btn">
+          <h2 className="text-white">Sold Out</h2>
         </div>
 
         <p>
@@ -36,7 +36,6 @@ const Menu = () => (
           <br />
           855 Brannan St, San Francisco, CA 94103
           <br />
-          Available February 13-17, noon-10pm
         </p>
 
         <p className="text-small">
