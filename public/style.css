@@ -55,7 +55,7 @@ a:visited {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important; }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 767px) {
   .container {
     max-width: 75%; } }
 #logo {
@@ -65,6 +65,9 @@ a:visited {
 #instafeed img {
   display: inline-block;
   max-width: 100%; }
+
+.menu-item-name {
+  padding-right: 1.5rem; }
 
 .btn {
   display: inline-block;

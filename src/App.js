@@ -69,8 +69,8 @@ class App extends React.Component {
             />
 
             <MenuItem
-              name="Pie crust biscuits (8 pcs.)"
-              description="Exactly what it sounds like! Flaky all-butter crust, 4 pcs. orginal, 4 pcs. with dark chocolate, sea salt & orange zest"
+              name="Pie crust biscuits"
+              description="Exactly what it sounds like! 8 biscuits of flaky all-butter crust: 4 orginal, 4 with dark chocolate, sea salt & orange zest"
               prices={[{price: 6}]}
             />
           </div>

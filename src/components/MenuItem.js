@@ -15,14 +15,14 @@ const MenuItem = ({name, description, prices}) => {
 
   const phonePriceList = prices.map(({price, size}) => (
     <span key={`${name}${price}`}>
-      &nbsp;&middot; {price} {renderSize(size)}
+      &nbsp;| {price} {renderSize(size)}
     </span>
   ))
 
   return (
-    <div className="row">
+    <div className="row menu-item">
       <div className="span8">
-        <h3 className="phone-hidden">{name}</h3>
+        <h3 className="phone-hidden menu-item-name">{name}</h3>
 
         <div className="phone-visible">
           <h3>{name}{phonePriceList}</h3>
