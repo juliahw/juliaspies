@@ -87,7 +87,8 @@ a:visited {
 // ----------------------------------------------------------------------------
 
 [class^="span"] {
-  margin: 10px 0 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 @media only screen and (min-width: 60em) {
@@ -100,13 +101,16 @@ a:visited {
 // Formatting
 // ----------------------------------------------------------------------------
 
-img {
+#logo {
   display: block;
-  max-width: 200px;
+  max-width: 100px;
 }
 
-#logo {
-  max-width: 100px;
+#instafeed {
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
 }
 
 .btn {
@@ -125,3 +129,10 @@ img {
     background-color: $brown;
   }
 }
+
+@for $i from 1 through 4 {
+  .space#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+}
+
