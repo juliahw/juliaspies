@@ -1,59 +1,49 @@
 import React from 'react'
 import cx from 'classnames'
-// import { Link, Route, Switch } from 'react-router-dom'
-
-import Menu from './components/Menu'
-// import Contact from './components/Contact'
 
 const FACEBOOK_LINK = 'https://www.facebook.com/juliamakespies'
+const INSTAGRAM_LINK = 'https://www.instagram.com/juliamakespies/'
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.linkClass = this.linkClass.bind(this);
-  // }
-
-  // linkClass(to) {
-  //   const currentPath = window.location.hash.slice(1)
-  //   return cx("nav-link", { current: currentPath === to })
-  // }
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
-      <div className="container">
-{/*        <div className="row">
-          <div className="col-2-sm"></div>
-          <div className="col-4-sm center">
-            <Link className={this.linkClass('/')} to="/">Menu</Link>
+      <div>
+        <div className="container">
+          <div className="row">
+            <div className="span12">
+              <img id="logo" src="public/logo.png" alt="Julia's Pies"/>
+            </div>
           </div>
-          <div className="col-4-sm center">
-            <Link className={this.linkClass('/contact')} to="/contact">Contact</Link>
-          </div>
-        </div>*/}
 
-        <div className="row">
-          <div className="col-12 center">
-            <img id="logo" src="public/logo.png" />
-            <h1>Julia's Pies</h1>
-            <h2>- Valentine's Day Pop-up -</h2>
+          <div className="row">
+            <div className="span8">
+              <h1>Julia’s Pies</h1>
+              <p>
+                <span className="text-red">Julia’s Pies</span> is a pie shop serving fresh baked goods from Julia’s kitchen, with the hope that every bite will bring you <span className="text-red">happy times</span>.
+              </p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="span12">
+              <div className="btn disabled">
+                <h3 className="text-white">Opening soon</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="span12">
+              <p>
+                +1 (415) 215 0260 &middot; <a target="_blank" href={FACEBOOK_LINK}>Facebook</a> &middot; <a target="_blank" href={INSTAGRAM_LINK}>Instagram</a>
+              </p>
+            </div>
           </div>
         </div>
-
-        <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8 center">
-            <p>
-              Sorry, I'm all sold out! Be the first to hear about future pies by liking my <a href={FACEBOOK_LINK} target="_blank">Facebook page</a>! :)
-            </p>
-          </div>
-        </div>
-
-        <Menu />
-
-{/*        <Switch>
-          <Route exact path="/" component={Menu}/>
-          <Route exact path="/contact" component={Contact}/>
-        </Switch>*/}
       </div>
     )
   }
