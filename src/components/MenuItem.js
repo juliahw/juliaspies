@@ -33,7 +33,7 @@ const MenuItem = ({name, description, prices}) => {
         </p>
       </div>
 
-      <div className="span4 phone-hidden">
+      <div className="span3 offset1 phone-hidden">
         {priceList}
       </div>
     </div>

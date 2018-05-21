@@ -27,6 +27,14 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bg-brown {
+  background-color: $brown !important;
 }
 
 // ----------------------------------------------------------------------------
@@ -98,7 +106,7 @@ a:visited {
 }
 
 // ----------------------------------------------------------------------------
-// Formatting
+// Miscellaneous
 // ----------------------------------------------------------------------------
 
 #logo {
@@ -130,7 +138,32 @@ a:visited {
 
   &.disabled {
     cursor: default;
-    background-color: $brown;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}
+
+.quantity-picker {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid $red;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  .increment,
+  .decrement {
+    display: inline-block;
+    padding: 0 1rem;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -140,3 +173,25 @@ a:visited {
   }
 }
 
+input[type=text] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid $red;
+  background-color: transparent;
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+  color: $brown;
+  display: inline-block;
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: $brown;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}

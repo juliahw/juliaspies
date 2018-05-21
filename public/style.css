@@ -10,6 +10,11 @@ body {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  *:focus {
+    outline: none; }
+
+.bg-brown {
+  background-color: #70614b !important; }
 
 .text-brown {
   color: #70614b; }
@@ -79,7 +84,26 @@ a:visited {
     background-color: #70614b; }
   .btn.disabled {
     cursor: default;
-    background-color: #70614b; }
+    opacity: 0.5; }
+    .btn.disabled:hover {
+      background-color: #EB3139; }
+
+.quantity-picker {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #EB3139;
+  font-size: 1.25rem;
+  font-weight: bold; }
+  .quantity-picker .increment,
+  .quantity-picker .decrement {
+    display: inline-block;
+    padding: 0 1rem;
+    cursor: pointer; }
+    .quantity-picker .increment.disabled,
+    .quantity-picker .decrement.disabled {
+      cursor: default;
+      opacity: 0.5; }
 
 .space1 {
   margin-bottom: 1rem; }
@@ -92,5 +116,23 @@ a:visited {
 
 .space4 {
   margin-bottom: 4rem; }
+
+input[type=text] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #EB3139;
+  background-color: transparent;
+  font-family: "Space Mono", "monospace";
+  font-size: 16px;
+  color: #70614b;
+  display: inline-block; }
+
+@-webkit-keyframes autofill {
+  to {
+    color: #70614b;
+    background: transparent; } }
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both; }
 
 /*# sourceMappingURL=style.css.map */
