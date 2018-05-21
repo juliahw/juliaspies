@@ -75,7 +75,7 @@ class Form extends React.Component {
   }
 
   validate() {
-    if (!this.state.email) {
+    if (!this.state.email.trim()) {
       return 'Please specify your email address!'
     }
 
@@ -88,11 +88,11 @@ class Form extends React.Component {
       return 'Please specify items to order!'
     }
 
-    if (!this.state.pickupDate) {
+    if (!this.state.pickupDate.trim()) {
       return 'Please provide a date for pickup!'
     }
 
-    if (!this.state.pickupTime) {
+    if (!this.state.pickupTime.trim()) {
       return 'Please provide a time for pickup!'
     }
 
@@ -298,7 +298,7 @@ class Form extends React.Component {
       </p>
     ) : (
       <p>
-        All items are made fresh to order, so please order at least <span className="text-red">24 hours in advance</span>. Please pay with cash on pickup or Venmo (@juliahw). Orders must be picked up from 855 Brannan St, San Francisco, 94103.
+        All items are made fresh to order, so <span className="text-red">please allow 24 hours</span>. We accept payment with cash on pickup or Venmo (@juliahw). Please pick up your order from 855 Brannan St, San Francisco, 94103. And most importantly, <span className="text-red">enjoy</span>!
       </p>
     )
 
