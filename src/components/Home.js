@@ -64,7 +64,7 @@ const Home = () => (
 
         <MenuItem
           name="Pie crust biscuits"
-          description="Exactly what it sounds like! 8 biscuits of flaky all-butter crust: 4 orginal, 4 with dark chocolate, sea salt & orange zest"
+          description="Exactly what it sounds like! 8 biscuits of flaky all-butter pie crust: 4 orginal, 4 with dark chocolate, sea salt & orange zest."
           prices={[{price: 6}]}
         />
       </div>
