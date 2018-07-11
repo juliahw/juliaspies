@@ -210,7 +210,7 @@ class Form extends React.Component {
           <div className="span8">
             <h3>Pickup time: *</h3>
             <p>
-              Available hours: 9-10am, 12-2pm &amp; 4-6pm Mon-Fri. Feel free to leave a note if you would like to schedule a pickup off-hours.
+              Available hours: 9am-6pm Mon-Fri. Feel free to leave a note if you would like to schedule a pickup off-hours.
             </p>
             <input
               type="text"
