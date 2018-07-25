@@ -1,5 +1,11 @@
 const menuItems = [
   {
+    name: 'Bourbon peach frangipane pie',
+    id: 'peachFrangipanePie',
+    description: 'Juicy yellow peaches, brown butter, bourbon & toasted almond frangipane in flaky all-butter crust. There’s even bourbon in the crust! Serves 8-10.',
+    price: 30,
+  },
+  {
     name: 'Plum & cardamom custard pie',
     id: 'plumCustardPie',
     description: 'Seasonal stone fruit in a tangy custard with a cardamom-spiced oat crumble crust. Serves 8-10.',
@@ -10,12 +16,6 @@ const menuItems = [
     id: 'honeyApplePie',
     description: 'Spiced apples with honey, dark brown sugar & meyer lemon zest in flaky all-butter crust. Serves 8-10.',
     price: 28,
-  },
-  {
-    name: 'Mango & lime cream tart',
-    id: 'mangoLimeCreamTart',
-    description: 'Sweet shortcrust filled with rich mango and lime cream & fresh diced champagne mangos. Serves 8-10.',
-    price: 32,
   },
   {
     name: 'Pie crust biscuits',

@@ -30,7 +30,7 @@ const Home = () => (
       <div className="span8">
         <h2>Menu</h2>
         <p>
-          Summer is one of the best and most overlooked pie seasons. Don’t miss our new summer menu items as they roll out over the next couple of weeks!
+          Summer is a delightful time for pie. Stone fruits are the star of our menu this season, but keep an eye out for our late summer items, which will feature berries, smoked apples & more!
         </p>
       </div>
     </div>
