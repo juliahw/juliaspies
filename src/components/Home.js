@@ -16,7 +16,7 @@ const Home = () => (
       </div>
     </div>
 
-    <div className="row">
+    {/*<div className="row">
       <div className="span12">
         <Link to="/order">
           <div className="btn space2">
@@ -24,18 +24,18 @@ const Home = () => (
           </div>
         </Link>
       </div>
-    </div>
+    </div>*/}
 
     <div className="row">
       <div className="span8">
         <h2>Menu</h2>
         <p>
-          Summer is a delightful time for pie. Stone fruits are the star of our menu this season, but keep an eye out for our late summer items, which will feature berries, smoked apples & more!
+          Hey there! Julia’s Pies is closed until <span className="text-red">Monday, October 22</span> for a special two weeks of recipe testing and experimentation. When we reopen, we’ll announce an all new autumn menu full of exciting and inventive items. Stay tuned!
         </p>
       </div>
     </div>
 
-    <div className="row">
+    {/*<div className="row">
       <div className="span6">
         {
           menuItems.slice(0, 2).map((item) => (
@@ -60,7 +60,7 @@ const Home = () => (
           ))
         }
       </div>
-    </div>
+    </div>*/}
 
     <Follow />
   </div>
