@@ -15,7 +15,7 @@ const MenuItem = ({name, description, prices}) => {
 
   const phonePriceList = prices.map(({price, size}) => (
     <span key={`${name}${price}`}>
-      &nbsp;| {price} {renderSize(size)}
+      &nbsp;&middot; {price} {renderSize(size)}
     </span>
   ))
 
