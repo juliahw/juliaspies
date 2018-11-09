@@ -13,8 +13,11 @@ class InstagramFeed extends React.Component {
       resolution: 'standard_resolution',
       template: '<div class="span4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
       sortBy: 'most-recent',
-      limit: 3,
+      limit: 4,
       links: false,
+      filter: (image) => {
+        return image.tags.indexOf('thanksgiving') < 0;
+      },
     });
 
     instafeed.run();
