@@ -18,11 +18,9 @@ const Home = () => (
 
     <div className="row">
       <div className="span12">
-        <Link to="/order">
-          <div className="btn space2">
-              <h3 className="text-white">Order now</h3>
-          </div>
-        </Link>
+        <div className="btn disabled space2">
+            <h3 className="text-white">Closed for Thanksgiving</h3>
+        </div>
       </div>
     </div>
 
