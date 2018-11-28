@@ -1,20 +1,20 @@
 const menuItems = [
   {
+    id: "pomegranatePearFrangipane",
+    name: "Pomegranate Pear Frangipane Pie",
+    description: "An autumn riff on our bourbon peach pie! Pears poached in fresh pomegranate syrup, nestled in brandy-spiked brown butter almond frangipane.",
+    price: 32,
+  },
+  {
     id: "appleQuince",
     name: "Apple Quince Pie",
     description: "Sauvignon blanc poached quinces & gently spiced apples in flaky all-butter crust.",
     price: 30,
   },
   {
-    id: "pumpkin",
-    name: "Pumpkin Pie",
-    description: "Creamy pumpkin custard in flaky all-butter crust, topped with torched homemade marshmallows.",
-    price: 28,
-  },
-  {
-    id: "pearGingerHibiscus",
-    name: "Pear, Ginger & Hibiscus Pie",
-    description: "Hibiscus poached pears spiced with fresh ginger in flaky all-butter crust.",
+    id: "butterscotchPumpkin",
+    name: "Butterscotch Pumpkin Pie",
+    description: "Creamy pumpkin custard with brown butter butterscotch & toasted spices in flaky all-butter crust.",
     price: 30,
   },
   {

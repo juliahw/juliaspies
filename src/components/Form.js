@@ -37,12 +37,6 @@ class Form extends React.Component {
     this.incrementFunction = this.incrementFunction.bind(this)
   }
 
-  // componentDidMount() {
-  //   if (!this.state.submitted) {
-  //     this.nameInput.focus()
-  //   }
-  // }
-
   handleChange(e) {
     let state = {}
     state[e.target.name] = e.target.value
@@ -62,6 +56,7 @@ class Form extends React.Component {
     this.setState({ submitting: true })
 
     const params = Object.assign(this.state, this.state.items)
+    params.timestamp = new Date().toString()
 
     let url = new URL(GOOGLE_SCRIPT_URL)
     url.search = new URLSearchParams(params)

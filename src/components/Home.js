@@ -18,9 +18,11 @@ const Home = () => (
 
     <div className="row">
       <div className="span12">
-        <div className="btn disabled space2">
-            <h3 className="text-white">Closed for Thanksgiving</h3>
-        </div>
+        <Link to="/order">
+          <div className="btn space2">
+              <h3 className="text-white">Order Now</h3>
+          </div>
+        </Link>
       </div>
     </div>
 
@@ -28,7 +30,7 @@ const Home = () => (
       <div className="span8">
         <h2>Menu</h2>
         <p>
-          Great pie is as essential to autumn as the changing of the leaves. We’re so excited to unveil our seasonal fall menu, full of warmth, spice & classics with a twist. Enjoy!
+          Thanksgiving might be over, but the holiday season has just begun. Bring home one of our late fall menu items today to share with friends & family!
         </p>
       </div>
     </div>
