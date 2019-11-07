@@ -1,123 +1,129 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import cx from 'classnames'
+import React from "react";
+import { Link } from "react-router-dom";
+import cx from "classnames";
 
-import menuItems from '../menuItems'
-import Follow from './Follow'
-import QuantityPicker from './QuantityPicker'
+import menuItems from "../menuItems";
+import Follow from "./Follow";
+import QuantityPicker from "./QuantityPicker";
 
 const GOOGLE_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxLsg2RVdZjtPLyKPzOKO1d5fKd0DKq5b33bbsDaiss35r8qgeP/exec'
+  "https://script.google.com/macros/s/AKfycbxLsg2RVdZjtPLyKPzOKO1d5fKd0DKq5b33bbsDaiss35r8qgeP/exec";
 
 class Form extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    const items = {}
+    const items = {};
     menuItems.forEach(i => {
-      items[i.id] = 0
-    })
+      items[i.id] = 0;
+    });
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
       items: items,
-      pickupDate: '',
-      pickupTime: '',
-      airbnbLocation: '',
-      comments: '',
+      pickupDate: "",
+      pickupTime: "",
+      airbnbLocation: "",
+      comments: "",
       submitting: false,
       submitted: false,
-      validationError: null,
-    }
+      validationError: null
+    };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.incrementFunction = this.incrementFunction.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.incrementFunction = this.incrementFunction.bind(this);
   }
 
   handleChange(e) {
-    let state = {}
-    state[e.target.name] = e.target.value
-    this.setState(state)
+    let state = {};
+    state[e.target.name] = e.target.value;
+    this.setState(state);
   }
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (this.state.submitting) { return }
+    if (this.state.submitting) {
+      return;
+    }
 
-    const validationError = this.validate()
-    this.setState({ validationError: validationError })
+    const validationError = this.validate();
+    this.setState({ validationError: validationError });
 
-    if (validationError) { return }
+    if (validationError) {
+      return;
+    }
 
-    this.setState({ submitting: true })
+    this.setState({ submitting: true });
 
-    const params = Object.assign(this.state, this.state.items)
-    params.timestamp = new Date().toString()
+    const params = Object.assign(this.state, this.state.items);
+    params.timestamp = new Date().toString();
 
-    let url = new URL(GOOGLE_SCRIPT_URL)
-    url.search = new URLSearchParams(params)
+    let url = new URL(GOOGLE_SCRIPT_URL);
+    url.search = new URLSearchParams(params);
 
-    fetch(url).then(response => response.json()).then(response => {
-      this.setState({
-        submitting: false,
-        submitted: true,
-      })
-    })
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          submitting: false,
+          submitted: true
+        });
+      });
   }
 
   validate() {
     if (!this.state.email.trim()) {
-      return 'Please specify your email address!'
+      return "Please specify your email address!";
     }
 
     const total = Object.entries(this.state.items).reduce((total, pair) => {
-      const [key, value] = pair
-      return total + value
-    }, 0)
+      const [key, value] = pair;
+      return total + value;
+    }, 0);
 
     if (total <= 0) {
-      return 'Please specify items to order!'
+      return "Please specify items to order!";
     }
 
     if (!this.state.pickupDate.trim()) {
-      return 'Please provide a date for pickup!'
+      return "Please provide a date for pickup!";
     }
 
     if (!this.state.pickupTime.trim()) {
-      return 'Please provide a time for pickup!'
+      return "Please provide a time for pickup!";
     }
 
-    return null
+    return null;
   }
 
   incrementFunction(itemName) {
-    return (e) => {
-      e.preventDefault()
+    return e => {
+      e.preventDefault();
 
-      let state = this.state
-      state.items[itemName] = Math.min(5, this.state.items[itemName] + 1)
+      let state = this.state;
+      state.items[itemName] = Math.min(5, this.state.items[itemName] + 1);
 
-      this.setState(state)
-    }
+      this.setState(state);
+    };
   }
 
   decrementFunction(itemName) {
-    return (e) => {
-      e.preventDefault()
+    return e => {
+      e.preventDefault();
 
-      let state = this.state
-      state.items[itemName] = Math.max(0, this.state.items[itemName] - 1)
+      let state = this.state;
+      state.items[itemName] = Math.max(0, this.state.items[itemName] - 1);
 
-      this.setState(state)
-    }
+      this.setState(state);
+    };
   }
 
   renderForm() {
-    const menuItemList = menuItems.map((item) => (
+    const menuItemList = menuItems.map(item => (
       <QuantityPicker
         key={item.id}
         name={item.name}
@@ -125,7 +131,7 @@ class Form extends React.Component {
         handleIncrement={this.incrementFunction(item.id)}
         handleDecrement={this.decrementFunction(item.id)}
       />
-    ))
+    ));
 
     return (
       <form>
@@ -136,7 +142,9 @@ class Form extends React.Component {
         <div className="row space1">
           <div className="span3">
             <input
-              ref={(input) => { this.nameInput = input }}
+              ref={input => {
+                this.nameInput = input;
+              }}
               type="text"
               name="name"
               value={this.state.name}
@@ -162,7 +170,10 @@ class Form extends React.Component {
 
         <div className="row">
           <h3>Phone number:</h3>
-          <p>Leave your phone number if you’d like a text when your order is ready for pickup.</p>
+          <p>
+            Leave your phone number if you’d like a text when your order is
+            ready for pickup.
+          </p>
         </div>
 
         <div className="row space2">
@@ -180,9 +191,7 @@ class Form extends React.Component {
           <h3>Items: *</h3>
         </div>
 
-        <div className="row space1">
-          {menuItemList}
-        </div>
+        <div className="row space1">{menuItemList}</div>
 
         <div className="row">
           <div className="span8">
@@ -205,7 +214,8 @@ class Form extends React.Component {
           <div className="span8">
             <h3>Pickup time: *</h3>
             <p>
-              Available hours: 9am-6pm Mon-Fri. Feel free to leave a note if you would like to schedule a pickup off-hours.
+              Available hours: 9am-6pm Mon-Fri. Feel free to leave a note if you
+              would like to schedule a pickup off-hours.
             </p>
             <input
               type="text"
@@ -220,7 +230,8 @@ class Form extends React.Component {
           <div className="span8">
             <h3>Work at Airbnb?</h3>
             <p>
-              Leave your nearest café in 888 or 999 below, and we can drop off your order there!
+              Leave your nearest café in 888 or 999 below, and we can drop off
+              your order there!
             </p>
             <input
               type="text"
@@ -259,13 +270,11 @@ class Form extends React.Component {
           </div>
         </div>
 
-        <div className="row text-red">
-          {this.state.validationError}
-        </div>
+        <div className="row text-red">{this.state.validationError}</div>
 
         <div className="space2"></div>
       </form>
-    )
+    );
   }
 
   renderFormSubmitted() {
@@ -283,19 +292,24 @@ class Form extends React.Component {
 
         <Follow />
       </div>
-    )
+    );
   }
 
   render() {
     const text = this.state.submitted ? (
       <p>
-        Thank you for ordering from Julia’s Pies! We'll be in touch with a confirmation soon.
+        Thank you for ordering from Julia’s Pies! We'll be in touch with a
+        confirmation soon.
       </p>
     ) : (
       <p>
-        All items are made fresh to order, so <span className="text-red">please allow 24 hours</span>. We accept payment with cash on pickup or Venmo (@juliahw). Please pick up your order from 855 Brannan St, San Francisco, 94103. And most importantly, <span className="text-red">enjoy</span>!
+        All items are made fresh to order, so{" "}
+        <span className="text-red">please allow 24 hours</span>. We accept
+        payment with cash on pickup or Venmo (@juliahw). Please pick up your
+        order from 855 Brannan St, San Francisco, 94103. And most importantly,{" "}
+        <span className="text-red">enjoy</span>!
       </p>
-    )
+    );
 
     return (
       <div>
@@ -308,8 +322,8 @@ class Form extends React.Component {
 
         {this.state.submitted ? this.renderFormSubmitted() : this.renderForm()}
       </div>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;
