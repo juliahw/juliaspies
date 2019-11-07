@@ -1,0 +1,13 @@
+language: generic
+services:
+- docker
+install:
+- curl https://raw.githubusercontent.com/stepchowfun/toast/master/install.sh -LSfs | VERSION=0.29.0 sh
+script:
+- toast build
+deploy:
+  provider: pages
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master

@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700");
+
 // ----------------------------------------------------------------------------
 // Configuration
 // ----------------------------------------------------------------------------
 
-$white: #F0F2F3;
-$red: #EB3139;
+$white: #f0f2f3;
+$red: #eb3139;
 $brown: #70614b;
 
 $default-font-size: 16px;
-$default-font-family: 'Space Mono', 'monospace';
+$default-font-family: "Space Mono", "monospace";
 
 // ----------------------------------------------------------------------------
 // General
@@ -85,7 +87,8 @@ a:visited {
   color: $brown;
   text-decoration: none;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     text-decoration: underline;
   }
 }
@@ -173,7 +176,7 @@ a:visited {
   }
 }
 
-input[type=text] {
+input[type="text"] {
   width: 100%;
   border: none;
   border-bottom: 2px solid $red;

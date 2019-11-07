@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
+import React from "react";
+import cx from "classnames";
 
-const QuantityPicker = (props) => (
+const QuantityPicker = props => (
   <div className="row">
     <div className="span6">
       <h3 className="text-brown menu-item-name phone-hidden">{props.name}</h3>
@@ -26,6 +26,6 @@ const QuantityPicker = (props) => (
       </div>
     </div>
   </div>
-)
+);
 
 export default QuantityPicker;
