@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     // Generate `dist/index.html`.
     new HtmlWebPackPlugin({
+      favicon: "src/images/favicon.ico",
       template: "src/index.html"
     }),
     // Extract CSS into separate files.
