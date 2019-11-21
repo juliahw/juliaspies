@@ -14,11 +14,8 @@ class InstagramFeed extends React.Component {
       template:
         '<div class="span4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
       sortBy: "most-recent",
-      limit: 4,
-      links: false,
-      filter: image => {
-        return image.tags.indexOf("thanksgiving") < 0;
-      }
+      limit: 3,
+      links: false
     });
 
     instafeed.run();
