@@ -4,8 +4,10 @@ import cx from "classnames";
 const QuantityPicker = props => (
   <div className="row">
     <div className="span6">
-      <h3 className="text-brown menu-item-name phone-hidden">{props.name}</h3>
-      <span className="phone-visible">{props.name}</span>
+      <div className="text-brown menu-item-name">
+        <h3>{props.name}</h3>
+        <em>{props.description}</em>
+      </div>
     </div>
 
     <div className="span6">
@@ -18,7 +20,9 @@ const QuantityPicker = props => (
         </div>
         {props.quantity}
         <div
-          className={cx("increment", { disabled: props.quantity >= 5 })}
+          className={cx("increment", {
+            disabled: props.quantity >= props.maxQuantity
+          })}
           onClick={props.handleIncrement}
         >
           +
