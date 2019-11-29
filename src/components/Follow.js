@@ -6,11 +6,18 @@ const INSTAGRAM_LINK = "https://www.instagram.com/juliamakespies";
 
 const Follow = () => (
   <div>
+    <div className="row">
+      <div className="span12">
+        <h2>Follow Julia</h2>
+      </div>
+    </div>
+
     <InstagramFeed />
 
     <div className="row">
       <div className="span12">
         <p>
+          +1 (415) 215 0260 &middot;{" "}
           <a target="_blank" href={FACEBOOK_LINK}>
             Facebook
           </a>{" "}

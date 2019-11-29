@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 
-import Popup from "./Popup";
-import PopupForm from "./PopupForm";
+import Home from "./Home";
+import Form from "./Form";
 
 import Logo from "../images/logo.png";
 
@@ -13,9 +13,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
+        <div className="row">
+          <div className="span12">
+            <Link to="/">
+              <img id="logo" src={Logo} alt="Julia's Pies" />
+            </Link>
+          </div>
+        </div>
+
         <Switch>
-          <Route exact path="/" component={Popup} />
-          <Route path="/order" component={PopupForm} />
+          <Route exact path="/" component={Home} />
+          <Route path="/order" component={Form} />
         </Switch>
       </div>
     );

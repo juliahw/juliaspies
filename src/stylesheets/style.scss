@@ -39,10 +39,6 @@ body {
   background-color: $brown !important;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 // ----------------------------------------------------------------------------
 // Typography
 // ----------------------------------------------------------------------------
@@ -57,14 +53,6 @@ body {
 
 .text-white {
   color: $white;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 h1,
@@ -87,7 +75,7 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
-  color: $brown;
+  color: $red;
 }
 
 p {
@@ -124,17 +112,7 @@ a:visited {
 // Miscellaneous
 // ----------------------------------------------------------------------------
 
-.popup-contents {
-  text-align: justify;
-}
-
 #logo {
-  margin: auto;
-  display: block;
-  max-width: 100px;
-}
-
-#logo-left {
   display: block;
   max-width: 100px;
 }
@@ -147,7 +125,6 @@ a:visited {
 }
 
 .menu-item-name {
-  display: inline-block;
   padding-right: 1.5rem;
 }
 
@@ -208,32 +185,6 @@ input[type="text"] {
   font-size: $default-font-size;
   color: $brown;
   display: inline-block;
-}
-
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid $red;
-  border-radius: 2px;
-  outline: none;
-  vertical-align: middle;
-  margin: 0;
-  text-align: center;
-
-  &:checked {
-    font-family: $default-font-family;
-    font-size: $default-font-size;
-    font-weight: bold;
-    color: $brown;
-    &:after {
-      content: "\2713";
-    }
-    text-rendering: auto;
-  }
 }
 
 @-webkit-keyframes autofill {
