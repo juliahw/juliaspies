@@ -13,11 +13,19 @@ const Home = () => (
         <p>
           Announcing <b>Free Pie Sunday</b>: the weekly event where I bake pies
           with seasonal fruits from some of my favorite local farms, and you
-          pick up a slice for free.
+          pick up a slice (or a few slices) for free!
         </p>
         <p>
-          This week’s pie is <b>Apricot Custard Pie</b>: oat crumble crust and a
-          tangy filling reminiscent of cheesecake, dappled with ripe apricots.
+          This week we’ve got <b>Apricot Custard Pie</b>: oat crumble crust and
+          a tangy, cheesecake-like filling dappled with ripe apricots from{" "}
+          <a href="https://www.instagram.com/kashiwasefarms/" target="_blank">
+            Kashiwase Farms
+          </a>{" "}
+          and{" "}
+          <a href="https://blossombluff.com/" target="_blank">
+            Blossom Bluff Orchards
+          </a>
+          .
         </p>
       </div>
     </div>
