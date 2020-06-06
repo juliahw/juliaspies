@@ -18,7 +18,7 @@ const QuantityPicker = props => (
         </div>
         {props.quantity}
         <div
-          className={cx("increment", { disabled: props.quantity >= 5 })}
+          className={cx("increment", { disabled: props.quantity >= 3 })}
           onClick={props.handleIncrement}
         >
           +

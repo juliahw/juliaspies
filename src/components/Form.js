@@ -21,18 +21,18 @@ class Form extends React.Component {
     this.state = {
       name: "",
       email: "",
-      phone: "",
       items: items,
-      pickupDate: "",
       pickupTime: "",
-      airbnbLocation: "",
       comments: "",
       submitting: false,
       submitted: false,
+      agreedToWearMask: false,
+      agreedToBringTupperware: false,
       validationError: null
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.incrementFunction = this.incrementFunction.bind(this);
   }
@@ -40,6 +40,12 @@ class Form extends React.Component {
   handleChange(e) {
     let state = {};
     state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
+
+  handleCheckbox(e) {
+    let state = {};
+    state[e.target.name] = e.target.checked;
     this.setState(state);
   }
 
@@ -86,15 +92,15 @@ class Form extends React.Component {
     }, 0);
 
     if (total <= 0) {
-      return "Please specify items to order!";
-    }
-
-    if (!this.state.pickupDate.trim()) {
-      return "Please provide a date for pickup!";
+      return "Please specify more than zero items!";
     }
 
     if (!this.state.pickupTime.trim()) {
       return "Please provide a time for pickup!";
+    }
+
+    if (!this.state.agreedToWearMask || !this.state.agreedToBringTupperware) {
+      return "Please agree to the required terms!";
     }
 
     return null;
@@ -105,7 +111,7 @@ class Form extends React.Component {
       e.preventDefault();
 
       let state = this.state;
-      state.items[itemName] = Math.min(5, this.state.items[itemName] + 1);
+      state.items[itemName] = Math.min(3, this.state.items[itemName] + 1);
 
       this.setState(state);
     };
@@ -168,75 +174,20 @@ class Form extends React.Component {
           </div>
         </div>
 
-        <div className="row">
-          <h3>Phone number:</h3>
-          <p>
-            Leave your phone number if you’d like a text when your order is
-            ready for pickup.
-          </p>
-        </div>
-
-        <div className="row space2">
-          <div className="span3">
-            <input
-              type="text"
-              name="phone"
-              value={this.state.phone}
-              onChange={this.handleChange}
-            />
-          </div>
-        </div>
-
         <div className="row space1">
           <h3>Items: *</h3>
         </div>
 
         <div className="row space1">{menuItemList}</div>
 
-        <div className="row">
-          <div className="span8">
-            <h3>Pickup date: *</h3>
-          </div>
-        </div>
-
-        <div className="row space1">
-          <div className="span3">
-            <input
-              type="text"
-              name="pickupDate"
-              value={this.state.pickupDate}
-              onChange={this.handleChange}
-            />
-          </div>
-        </div>
-
         <div className="row space1">
           <div className="span8">
             <h3>Pickup time: *</h3>
-            <p>
-              Available hours: 9am-6pm Mon-Fri. Feel free to leave a note if you
-              would like to schedule a pickup off-hours.
-            </p>
+            <p>Available hours: 10am-4pm on Sunday.</p>
             <input
               type="text"
               name="pickupTime"
               value={this.state.pickupTime}
-              onChange={this.handleChange}
-            />
-          </div>
-        </div>
-
-        <div className="row space1">
-          <div className="span8">
-            <h3>Work at Airbnb?</h3>
-            <p>
-              Leave your nearest café in 888 or 999 below, and we can drop off
-              your order there!
-            </p>
-            <input
-              type="text"
-              name="airbnbLocation"
-              value={this.state.airbnbLocation}
               onChange={this.handleChange}
             />
           </div>
@@ -256,6 +207,27 @@ class Form extends React.Component {
               value={this.state.comments}
               onChange={this.handleChange}
             />
+          </div>
+        </div>
+
+        <div className="row">
+          <input
+            name="agreedToWearMask"
+            type="checkbox"
+            checked={this.state.agreedToWearMask}
+            onChange={this.handleCheckbox}
+          />
+          I agree to wear a mask during pickup.
+        </div>
+        <div className="row space1">
+          <div className="span8">
+            <input
+              name="agreedToBringTupperware"
+              type="checkbox"
+              checked={this.state.agreedToBringTupperware}
+              onChange={this.handleCheckbox}
+            />
+            I will bring a tupperware.
           </div>
         </div>
 
@@ -298,24 +270,33 @@ class Form extends React.Component {
   render() {
     const text = this.state.submitted ? (
       <p>
-        Thank you for ordering from Julia’s Pies! We'll be in touch with a
+        Looking forward to seeing you this weekend! We'll be in touch with a
         confirmation soon.
       </p>
     ) : (
-      <p>
-        All items are made fresh to order, so{" "}
-        <span className="text-red">please allow 24 hours</span>. We accept
-        payment with cash on pickup or Venmo (@juliahw). Please pick up your
-        order from 855 Brannan St, San Francisco, 94103. And most importantly,{" "}
-        <span className="text-red">enjoy</span>!
-      </p>
+      <div>
+        <p>
+          Pickup will be located outside the lobby of 33 Tehama St in San
+          Francisco.{" "}
+          <b>
+            As I’m still waiting on an order of takeout boxes, please bring a
+            tupperware that can fit your desired amount of pie.
+          </b>{" "}
+          You may need to wait 5 minutes or so during pickup while I sanitize
+          and fill your tupperware in my kitchen.
+        </p>
+        <p>
+          If not consuming immediately, please keep your pie refrigerated until
+          15 minutes before serving. And of course, enjoy!
+        </p>
+      </div>
     );
 
     return (
       <div>
         <div className="row">
           <div className="span8">
-            <h1>Order</h1>
+            <h1>Free Pie Sunday</h1>
             {text}
           </div>
         </div>
