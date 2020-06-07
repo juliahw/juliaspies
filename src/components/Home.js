@@ -32,11 +32,9 @@ const Home = () => (
 
     <div className="row">
       <div className="span12 text-center">
-        <Link to="/order">
-          <div className="btn space2">
-            <h3 className="text-white">Reserve Now</h3>
-          </div>
-        </Link>
+        <div className="btn disabled space2">
+          <h3 className="text-white">Reservations Full</h3>
+        </div>
       </div>
     </div>
 
