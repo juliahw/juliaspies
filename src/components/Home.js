@@ -11,13 +11,14 @@ const Home = () => (
       <div className="span8">
         <h1>Julia’s Pies</h1>
         <p>
-          Announcing <b>Free Pie Sunday</b>: the weekly event where I bake pies
-          with seasonal fruits from some of my favorite local farms, and you
-          pick up a slice (or a few slices) for free!
+          <b>Free Pie Sunday</b> is a weekly event where I bake pies with
+          seasonal fruits from some of my favorite local farms, and you pick up
+          a slice (or a few slices) for free!
         </p>
         <p>
-          This week we’ve got <b>Apricot Custard Pie</b>: oat crumble crust and
-          a tangy, cheesecake-like filling dappled with ripe apricots from{" "}
+          Last week we gave away slices of <b>Apricot Custard Pie</b>: oat
+          crumble crust and a tangy, cheesecake-like filling dappled with ripe
+          apricots from{" "}
           <a href="https://www.instagram.com/kashiwasefarms/" target="_blank">
             Kashiwase Farms
           </a>{" "}
@@ -25,7 +26,7 @@ const Home = () => (
           <a href="https://blossombluff.com/" target="_blank">
             Blossom Bluff Orchards
           </a>
-          .
+          . Stay tuned for this week’s pie.
         </p>
       </div>
     </div>
@@ -33,7 +34,7 @@ const Home = () => (
     <div className="row">
       <div className="span12 text-center">
         <div className="btn disabled space2">
-          <h3 className="text-white">Reservations Full</h3>
+          <h3 className="text-white">Reservations closed</h3>
         </div>
       </div>
     </div>
