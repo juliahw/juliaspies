@@ -11,22 +11,16 @@ const Home = () => (
       <div className="span8">
         <h1>Julia’s Pies</h1>
         <p>
+          <b>
+            Update: I’m currently sick (most likely just a cold), so Free Pie
+            Sunday is canceled this week to keep everyone safe. Fingers crossed
+            we’ll be back next week! Hope you have a wonderful weekend.
+          </b>
+        </p>
+        <p>
           <b>Free Pie Sunday</b> is a weekly event where I bake pies with
           seasonal fruits from some of my favorite local farms, and you pick up
           a slice (or a few slices) for free!
-        </p>
-        <p>
-          Last week we gave away slices of <b>Apricot Custard Pie</b>: oat
-          crumble crust and a tangy, cheesecake-like filling dappled with ripe
-          apricots from{" "}
-          <a href="https://www.instagram.com/kashiwasefarms/" target="_blank">
-            Kashiwase Farms
-          </a>{" "}
-          and{" "}
-          <a href="https://blossombluff.com/" target="_blank">
-            Blossom Bluff Orchards
-          </a>
-          . Stay tuned for this week’s pie.
         </p>
       </div>
     </div>
