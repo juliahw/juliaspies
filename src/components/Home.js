@@ -11,16 +11,9 @@ const Home = () => (
       <div className="span8">
         <h1>Julia’s Pies</h1>
         <p>
-          <b>
-            Update: I’m currently sick (most likely just a cold), so Free Pie
-            Sunday is canceled this week to keep everyone safe. Fingers crossed
-            we’ll be back next week! Hope you have a wonderful weekend.
-          </b>
-        </p>
-        <p>
-          <b>Free Pie Sunday</b> is a weekly event where I bake pies with
-          seasonal fruits from some of my favorite local farms, and you pick up
-          a slice (or a few slices) for free!
+          <b>Free Pie Sunday</b> is an event where I bake pies with seasonal
+          fruits from some of my favorite local farms, and you pick up a slice
+          (or a few slices) for free! Stay tuned for the next event date!
         </p>
       </div>
     </div>
