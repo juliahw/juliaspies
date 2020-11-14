@@ -17,7 +17,6 @@ const Follow = () => (
     <div className="row">
       <div className="span12">
         <p>
-          +1 (415) 215 0260 &middot;{" "}
           <a target="_blank" href={FACEBOOK_LINK}>
             Facebook
           </a>{" "}

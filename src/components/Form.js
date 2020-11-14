@@ -14,20 +14,19 @@ class Form extends React.Component {
     super(props);
 
     const items = {};
-    menuItems.forEach(i => {
-      items[i.id] = 0;
+    Object.keys(menuItems).forEach(id => {
+      items[id] = 0;
     });
 
     this.state = {
       name: "",
-      email: "",
+      phone: "",
       items: items,
       pickupTime: "",
       comments: "",
       submitting: false,
       submitted: false,
       agreedToWearMask: false,
-      agreedToBringTupperware: false,
       validationError: null
     };
 
@@ -82,8 +81,12 @@ class Form extends React.Component {
   }
 
   validate() {
-    if (!this.state.email.trim()) {
-      return "Please specify your email address!";
+    if (!this.state.name.trim()) {
+      return "Please provide a name!";
+    }
+
+    if (!this.state.phone.trim()) {
+      return "Please provide a phone number!";
     }
 
     const total = Object.entries(this.state.items).reduce((total, pair) => {
@@ -96,10 +99,10 @@ class Form extends React.Component {
     }
 
     if (!this.state.pickupTime.trim()) {
-      return "Please provide a time for pickup!";
+      return "Please specify a pickup time!";
     }
 
-    if (!this.state.agreedToWearMask || !this.state.agreedToBringTupperware) {
+    if (!this.state.agreedToWearMask) {
       return "Please agree to the required terms!";
     }
 
@@ -111,7 +114,7 @@ class Form extends React.Component {
       e.preventDefault();
 
       let state = this.state;
-      state.items[itemName] = Math.min(3, this.state.items[itemName] + 1);
+      state.items[itemName] = Math.min(2, this.state.items[itemName] + 1);
 
       this.setState(state);
     };
@@ -129,28 +132,31 @@ class Form extends React.Component {
   }
 
   renderForm() {
-    const menuItemList = menuItems.map(item => (
+    const menuItemList = Object.entries(menuItems).map(([id, item]) => (
       <QuantityPicker
-        key={item.id}
+        key={id}
         name={item.name}
-        quantity={this.state.items[item.id]}
-        handleIncrement={this.incrementFunction(item.id)}
-        handleDecrement={this.decrementFunction(item.id)}
+        description={item.description}
+        price={item.price}
+        quantity={this.state.items[id]}
+        handleIncrement={this.incrementFunction(id)}
+        handleDecrement={this.decrementFunction(id)}
       />
     ));
+
+    const orderTotal = Object.entries(this.state.items)
+      .map(([id, quantity]) => quantity * menuItems[id].price)
+      .reduce((a, b) => a + b, 0);
 
     return (
       <form>
         <div className="row">
-          <h3>Name:</h3>
+          <h3>Name: *</h3>
         </div>
 
         <div className="row space1">
           <div className="span3">
             <input
-              ref={input => {
-                this.nameInput = input;
-              }}
               type="text"
               name="name"
               value={this.state.name}
@@ -160,15 +166,21 @@ class Form extends React.Component {
         </div>
 
         <div className="row">
-          <h3>Email address: *</h3>
+          <div className="span8">
+            <h3>Phone number: *</h3>
+            <p>
+              Confirmation and pickup reminders will be sent via text to this
+              number.
+            </p>
+          </div>
         </div>
 
         <div className="row space1">
           <div className="span4">
             <input
               type="text"
-              name="email"
-              value={this.state.email}
+              name="phone"
+              value={this.state.phone}
               onChange={this.handleChange}
             />
           </div>
@@ -178,12 +190,23 @@ class Form extends React.Component {
           <h3>Items: *</h3>
         </div>
 
-        <div className="row space1">{menuItemList}</div>
+        <div className="row space1">
+          {menuItemList}
+          <p>
+            <em>
+              Your order total is <b>${orderTotal}</b>.
+            </em>
+          </p>
+        </div>
 
         <div className="row space1">
           <div className="span8">
             <h3>Pickup time: *</h3>
-            <p>Available hours: 10am-4pm on Sunday.</p>
+            <p>
+              Pickup is available on November 24 and 25 between 9am and 1pm.
+              Please arrive no more than 15 minutes before or after your
+              designated time.
+            </p>
             <input
               type="text"
               name="pickupTime"
@@ -210,7 +233,7 @@ class Form extends React.Component {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row space2">
           <input
             name="agreedToWearMask"
             type="checkbox"
@@ -218,17 +241,6 @@ class Form extends React.Component {
             onChange={this.handleCheckbox}
           />
           I agree to wear a mask during pickup.
-        </div>
-        <div className="row space1">
-          <div className="span8">
-            <input
-              name="agreedToBringTupperware"
-              type="checkbox"
-              checked={this.state.agreedToBringTupperware}
-              onChange={this.handleCheckbox}
-            />
-            I will bring a tupperware.
-          </div>
         </div>
 
         <div className="row">
@@ -269,25 +281,34 @@ class Form extends React.Component {
 
   render() {
     const text = this.state.submitted ? (
-      <p>
-        Looking forward to seeing you this weekend! We'll be in touch with a
-        confirmation soon.
-      </p>
+      <div>
+        <p>
+          Thank you for ordering from Julia’s Pies! We'll be in touch soon to
+          confirm your order.
+        </p>
+      </div>
     ) : (
       <div>
         <p>
-          Pickup will be located outside the lobby of 33 Tehama St in San
-          Francisco.{" "}
-          <b>
-            As I’m still waiting on an order of takeout boxes, please bring a
-            tupperware that can fit your desired amount of pie.
-          </b>{" "}
-          You may need to wait 5 minutes or so during pickup while I sanitize
-          and fill your tupperware in my kitchen.
+          Pickup is located outside the lobby of{" "}
+          <b>33 Tehama St, San Francisco</b> on{" "}
+          <b>November 24 and 25 between 9am and 1pm</b>. Please arrive no more
+          than 15 minutes before or after your designated time. Sorry, delivery
+          is not available!
         </p>
         <p>
-          If not consuming immediately, please keep your pie refrigerated until
-          15 minutes before serving. And of course, enjoy!
+          To pay, please Venmo <b>@juliahw</b> within 24 hours of placing your
+          order.
+        </p>
+        <p>
+          Questions? Send a DM to{" "}
+          <a
+            href="https://www.instagram.com/juliamakespies"
+            className="text-red"
+          >
+            @juliamakespies
+          </a>{" "}
+          on Instagram and I’ll answer as soon as possible.
         </p>
       </div>
     );
@@ -296,7 +317,7 @@ class Form extends React.Component {
       <div>
         <div className="row">
           <div className="span8">
-            <h1>Free Pie Sunday</h1>
+            <h1>Thanksgiving Pre-order</h1>
             {text}
           </div>
         </div>
