@@ -11,7 +11,7 @@ const Home = () => (
       <div className="span8">
         <h1>Julia’s Pies</h1>
         <p>
-          This year’s Thanksgiving special: <b>Apple-Pear-Cranberry Pie</b>!
+          This year’s Thanksgiving special: <b>Apple Pear Cranberry Pie</b>!
           This fresh and zingy pie features Pink Lady apples, Bartlett pears,
           and cranberries spiced with orange, ginger, and vanilla. The filling
           is thickened purely with the natural pectin in the cranberries,
