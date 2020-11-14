@@ -14,8 +14,8 @@ const Home = () => (
           This year’s Thanksgiving special: <b>Apple Pear Cranberry Pie</b>!
           This fresh and zingy pie features Pink Lady apples, Bartlett pears,
           and cranberries spiced with orange, ginger, and vanilla. The filling
-          is thickened purely with the natural pectin in the cranberries,
-          producing a jammy texture with exceptional clarity of flavor.
+          is thickened with the natural pectin in the cranberries instead of
+          starch, producing a jammy texture with exceptional clarity of flavor.
         </p>
         <p>
           A slice is delicious on its own, but it’s even better paired with a
