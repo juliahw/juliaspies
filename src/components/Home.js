@@ -10,28 +10,7 @@ const Home = () => (
     <div className="row">
       <div className="span8">
         <h1>Julia’s Pies</h1>
-        <p>
-          This year’s Thanksgiving special: <b>Apple Pear Cranberry Pie</b>!
-          This fresh and zingy pie features Pink Lady apples, Bartlett pears,
-          and cranberries spiced with orange, ginger, and vanilla. The filling
-          is thickened with the natural pectin in the cranberries instead of
-          starch, producing a jammy texture with exceptional clarity of flavor.
-        </p>
-        <p>
-          A slice is delicious on its own, but it’s even better paired with a
-          generous dollop of <b>Mascarpone Brandy Cream</b>. The mascarpone is
-          house made with fresh, low-temperature pasteurized cream. Whipped
-          until fluffy with brown sugar and a splash of booze, it’s the ultimate
-          pie pairing.
-        </p>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="span12 text-center">
-        <div className="btn space2 disabled">
-          <h3 className="text-white">Sold out!</h3>
-        </div>
+        <p>Something’s cooking here… Stayed tuned!</p>
       </div>
     </div>
 
