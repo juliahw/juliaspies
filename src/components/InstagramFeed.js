@@ -5,7 +5,7 @@ class InstagramFeed extends React.Component {
   componentDidMount() {
     const instafeed = new Instafeed({
       accessToken:
-        "IGQVJYQk4xcWo1UGlMQVNGMXJtY21jSkN4X1h3OUVEYzNDTzBONVFmS3Vqa2FySFNDdlpXcW9rM09EWnlsX1h0djlCT2hxY05yYkFSNnNRTkU4Rlh6NTVIZADFRUktINTIteld3a1FoSkZAZAdVZABNkRraQZDZD",
+        "IGQVJYU0YyUENLWVpoTEFjYUdCSWhVUGdoWENYanFOb1l0U3VFazJzbVh6U1E1YUNrdHF3WXdLZAVpBalBjeXFNeGhLMmlpNkVUbFhZASTZAIdGhtajVHZAEk3VTJKdk01VmIwbENYd0h4Y0ZAjNHFrbHcxWQZDZD",
       template:
         '<div class="span4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
       limit: 3
