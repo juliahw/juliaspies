@@ -84,13 +84,13 @@ p {
 
 a,
 a:visited {
-  color: $brown;
+  color: $red;
   text-decoration: none;
 
   &:hover,
   &:active {
     color: $red;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
