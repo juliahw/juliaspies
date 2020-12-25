@@ -1,9 +1,15 @@
 const menuItems = {
-  hazelnutCoffeeCreamPie: {
-    name: "Hazelnut Coffee Cream Pie",
+  applePearCranberryPie: {
+    name: "Apple Pear Cranberry Pie",
     description:
-      "Flaky crust filled with hazelnut praline ganache, mascarpone cream, and ladyfingers soaked in a Frangelico, amaro, and coffee syrup. Topped with hazelnut cream and cocoa.",
-    price: 37
+      "Pink Lady apples, Bartlett pears, and cranberries spiced with orange, ginger, and vanilla in a crisp and flaky double crust. Serves 8-10. Reheating instructions included.",
+    price: 35
+  },
+  mascarponeBrandyCream: {
+    name: "Mascarpone Brandy Cream",
+    description:
+      "12 oz. container of house made mascarpone whipped with brown sugar and brandy. Keep refrigerated. If possible, bring a cooler to prevent deflating during transit.",
+    price: 6
   }
 };
 

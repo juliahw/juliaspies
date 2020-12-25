@@ -203,7 +203,7 @@ class Form extends React.Component {
           <div className="span8">
             <h3>Pickup time: *</h3>
             <p>
-              Pickup is available on December 23 and 24 between 9am and 1pm.
+              Pickup is available on November 24 and 25 between 9am and 1pm.
               Please arrive no more than 15 minutes before or after your
               designated time.
             </p>
@@ -292,9 +292,13 @@ class Form extends React.Component {
         <p>
           Pickup is located outside the lobby of{" "}
           <b>33 Tehama St, San Francisco</b> on{" "}
-          <b>December 23 and 24 between 9am and 1pm</b>. Please arrive no more
+          <b>November 24 and 25 between 9am and 1pm</b>. Please arrive no more
           than 15 minutes before or after your designated time. Sorry, delivery
           is not available!
+        </p>
+        <p>
+          To pay, please Venmo <b>@juliahw</b> within 24 hours of placing your
+          order.
         </p>
         <p>
           Questions? Send a DM to{" "}
@@ -313,7 +317,7 @@ class Form extends React.Component {
       <div>
         <div className="row">
           <div className="span8">
-            <h1>Christmas Pre-order</h1>
+            <h1>Thanksgiving Pre-order</h1>
             {text}
           </div>
         </div>
