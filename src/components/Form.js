@@ -7,7 +7,7 @@ import Follow from "./Follow";
 import QuantityPicker from "./QuantityPicker";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxLsg2RVdZjtPLyKPzOKO1d5fKd0DKq5b33bbsDaiss35r8qgeP/exec";
+  "https://script.google.com/macros/s/AKfycbyHo7kexPhBzR48XNnu4u2ztKE5W3QyShCJnb2XoISJU0YCq9-RjXLEhA/exec";
 
 class Form extends React.Component {
   constructor(props) {
@@ -64,20 +64,19 @@ class Form extends React.Component {
 
     this.setState({ submitting: true });
 
-    const params = Object.assign(this.state, this.state.items);
+    Object.assign(this.state, this.state.items);
     params.timestamp = new Date().toString();
+    params.action = "createOrder";
 
     let url = new URL(GOOGLE_SCRIPT_URL);
     url.search = new URLSearchParams(params);
 
-    fetch(url)
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          submitting: false,
-          submitted: true
-        });
+    fetch(url).then(response => {
+      this.setState({
+        submitting: false,
+        submitted: true
       });
+    });
   }
 
   validate() {
