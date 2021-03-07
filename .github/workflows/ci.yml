@@ -5,9 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: azure/docker-login@v1
+      if: github.event_name == 'push'
+      with:
+        username: juliahw
+        password: ${{ secrets.DOCKER_PASSWORD }}
     - uses: stepchowfun/toast/.github/actions/toast@master
       with:
         tasks: build
+        repo: juliahw/juliaspies
+        write_remote_cache: ${{ github.event_name == 'push' }}
     - uses: JamesIves/github-pages-deploy-action@4.1.0
       if: github.ref == 'refs/heads/master'
       with:
