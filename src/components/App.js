@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 
 import Home from "./Home";
-import Form from "./Form";
 
 import Logo from "../images/logo.png";
 
@@ -23,7 +22,6 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/order" component={Form} />
         </Switch>
       </div>
     );

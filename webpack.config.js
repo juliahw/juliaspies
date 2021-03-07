@@ -15,6 +15,7 @@ module.exports = {
           // Compile ES6 and JSX to JS.
           loader: "babel-loader",
           options: {
+            plugins: ["@babel/transform-runtime"],
             presets: ["@babel/preset-env", "@babel/preset-react"]
           }
         }

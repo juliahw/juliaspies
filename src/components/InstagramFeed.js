@@ -1,21 +1,66 @@
 import React from "react";
-import Instafeed from "instafeed.js";
+import cx from "classnames";
+
+import { getInstagramToken } from "../lib/API";
 
 class InstagramFeed extends React.Component {
-  componentDidMount() {
-    const instafeed = new Instafeed({
-      accessToken:
-        "IGQVJVai13SWFnRFRBT0dHZAV9uUFpGckx5S25KZAE1YZAnZAnOU5mTzB4ZAFVXc01Pc1c0VElPMGh5bFRBcVRtczBWNGo5emtycDZAHNWRQdmlEOXFyZAEVYTm9rWXEzQ1VYcWJ0TDRkVWNn",
-      template:
-        '<div class="span4"><a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a></div>',
-      limit: 3
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true
+    };
+  }
+
+  async componentDidMount() {
+    const token = await getInstagramToken();
+
+    const instagramUrl = new URL("https://graph.instagram.com/me/media");
+    instagramUrl.search = new URLSearchParams({
+      fields: ["id", "media_url", "permalink"],
+      limit: 3,
+      access_token: token
     });
 
-    instafeed.run();
+    const response = await fetch(instagramUrl);
+    const responseJson = await response.json();
+
+    this.setState({
+      images: responseJson.data,
+      loading: false
+    });
   }
 
   render() {
-    return <div className="row" id="instafeed" />;
+    return (
+      <div className="row" id="instagram-feed">
+        {this.state.loading ? (
+          <React.Fragment>
+            <div className="span4">
+              <div className="placeholder" id="placeholder1"></div>
+            </div>
+            <div className="span4">
+              <div className="placeholder" id="placeholder2"></div>
+            </div>
+            <div className="span4">
+              <div className="placeholder" id="placeholder3"></div>
+            </div>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {this.state.images.map(image => {
+              return (
+                <div className="span4 instagram-image-container" key={image.id}>
+                  <a href={image.permalink} target="_blank">
+                    <img src={image.media_url} />
+                  </a>
+                </div>
+              );
+            })}
+          </React.Fragment>
+        )}
+      </div>
+    );
   }
 }
 

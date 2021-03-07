@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import menuItems from "../menuItems";
-import MenuItem from "./MenuItem";
 import Follow from "./Follow";
 
 const Home = () => (

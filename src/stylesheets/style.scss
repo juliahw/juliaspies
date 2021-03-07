@@ -39,6 +39,10 @@ body {
   background-color: $brown !important;
 }
 
+.hidden {
+  display: none;
+}
+
 // ----------------------------------------------------------------------------
 // Typography
 // ----------------------------------------------------------------------------
@@ -118,10 +122,46 @@ a:visited {
   max-width: 100px;
 }
 
-#instafeed {
+#instagram-feed {
+  .instagram-image-container {
+    overflow: hidden;
+  }
+
   img {
     display: inline-block;
     max-width: 100%;
+  }
+
+  .placeholder {
+    background-color: $red;
+    opacity: 0.1;
+    -webkit-animation: loading-fade 2s ease-in-out infinite;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    #placeholder#{$i} {
+      animation-delay: #{$i - 1}s;
+    }
+  }
+}
+
+@-webkit-keyframes loading-fade {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  100% {
+    opacity: 0.1;
   }
 }
 
