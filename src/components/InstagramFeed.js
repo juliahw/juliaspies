@@ -34,31 +34,21 @@ class InstagramFeed extends React.Component {
   render() {
     return (
       <div className="row" id="instagram-feed">
-        {this.state.loading ? (
-          <React.Fragment>
-            <div className="span4">
-              <div className="placeholder" id="placeholder1"></div>
-            </div>
-            <div className="span4">
-              <div className="placeholder" id="placeholder2"></div>
-            </div>
-            <div className="span4">
-              <div className="placeholder" id="placeholder3"></div>
-            </div>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            {this.state.images.map(image => {
-              return (
-                <div className="span4 instagram-image-container" key={image.id}>
-                  <a href={image.permalink} target="_blank">
-                    <img src={image.media_url} />
+        <React.Fragment>
+          {[0, 1, 2].map(i => {
+            return (
+              <div className="span4" key={`instagram-${i}`}>
+                {this.state.loading ? (
+                  <div className="placeholder" id={`placeholder-${i}`} />
+                ) : (
+                  <a href={this.state.images[i].permalink} target="_blank">
+                    <img src={this.state.images[i].media_url} />
                   </a>
-                </div>
-              );
-            })}
-          </React.Fragment>
-        )}
+                )}
+              </div>
+            );
+          })}
+        </React.Fragment>
       </div>
     );
   }
