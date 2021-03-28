@@ -10,7 +10,7 @@ jobs:
       with:
         username: juliahw
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - uses: stepchowfun/toast/.github/actions/toast@master
+    - uses: stepchowfun/toast/.github/actions/toast@main
       with:
         tasks: build
         repo: juliahw/juliaspies
