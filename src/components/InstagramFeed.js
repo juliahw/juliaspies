@@ -1,25 +1,24 @@
 import React from "react";
 import cx from "classnames";
 
-import { getInstagramToken } from "../lib/API";
-
 class InstagramFeed extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: true
+      loading: true,
     };
   }
 
   async componentDidMount() {
-    const token = await getInstagramToken();
+    const instagramTokenFile = await fetch("instagramToken.txt");
+    const token = await instagramTokenFile.text();
 
     const instagramUrl = new URL("https://graph.instagram.com/me/media");
     instagramUrl.search = new URLSearchParams({
       fields: ["id", "media_url", "permalink"],
       limit: 3,
-      access_token: token
+      access_token: token,
     });
 
     const response = await fetch(instagramUrl);
@@ -27,7 +26,7 @@ class InstagramFeed extends React.Component {
 
     this.setState({
       images: responseJson.data,
-      loading: false
+      loading: false,
     });
   }
 
@@ -35,7 +34,7 @@ class InstagramFeed extends React.Component {
     return (
       <div className="row" id="instagram-feed">
         <React.Fragment>
-          {[0, 1, 2].map(i => {
+          {[0, 1, 2].map((i) => {
             return (
               <div className="span4" key={`instagram-${i}`}>
                 {this.state.loading ? (
