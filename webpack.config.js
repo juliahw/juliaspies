@@ -53,8 +53,8 @@ module.exports = {
       },
       {
         test: /\.txt$/,
-        type: 'asset/source',
-      }
+        type: "asset/source",
+      },
     ],
   },
   optimization: {

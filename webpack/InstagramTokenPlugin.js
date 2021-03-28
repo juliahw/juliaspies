@@ -18,7 +18,6 @@ async function getInstagramToken() {
 class InstagramTokenPlugin {
   apply(compiler) {
     compiler.hooks.emit.tapPromise(
-
       "InstagramTokenPlugin",
       async (compilation) => {
         const instagramToken = await getInstagramToken();
