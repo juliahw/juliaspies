@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InstagramFeed from "./InstagramFeed";
+import Logo from "../images/pie.png";
 
 const Home = () => (
   <div className="container">
