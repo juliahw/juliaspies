@@ -26,8 +26,6 @@ body {
   color: $brown;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .content {
@@ -71,7 +69,7 @@ h1 {
   font-weight: bold;
   padding: 0;
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: $lh * 3;
   color: $red;
 }
@@ -112,10 +110,12 @@ a:visited {
     display: block;
     max-width: 100%;
     position: relative;
+    border-radius: 6px;
 
     &:hover {
-      opacity: 0.5;
-      transition: opacity 0.1s ease-out;
+      opacity: 0.75;
+      box-shadow: 0 0 0 ($lh / 5) $green;
+      transition: opacity 0.05s ease-out, box-shadow 0.05s;
     }
   }
 

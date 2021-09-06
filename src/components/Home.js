@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InstagramFeed from "./InstagramFeed";
-import Logo from "../images/pie.png";
 
 const Home = () => (
   <div className="container">
@@ -14,12 +13,12 @@ const Home = () => (
         <div className="row">
           <div className="span8">
             <p>
-              Julia’s Pies is the product of my lifelong obsession with pie. I
-              develop my own recipes to share with family and friends inspired
-              by food science, seasonality, and flavors. Sometimes I hold
-              giveaways and seasonal sales. In the past I have catered pie for{" "}
+              Julia’s Pies is the product of my lifelong obsession with pie. I’m
+              inspired by flavors, seasons, and science to develop my own
+              recipes and bring them to life. Sometimes I hold giveaways and
+              seasonal sales. In the past I have catered for{" "}
               <a href="https://www.seedandsoulclub.org/" target="_blank">
-                Seed and Soul Club
+                Seed & Soul Club
               </a>{" "}
               and{" "}
               <a
@@ -30,7 +29,10 @@ const Home = () => (
               </a>{" "}
               events.
             </p>
-            <p>Interested in pie? Techniques? Recipes? Reach out anytime!</p>
+            <p>
+              Interested in pie? Food science? Techniques? Recipes? Reach out
+              anytime!
+            </p>
           </div>
         </div>
 
