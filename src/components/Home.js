@@ -14,9 +14,9 @@ const Home = () => (
           <div className="span8">
             <p>
               Julia’s Pies is the product of my lifelong obsession with pie. I’m
-              inspired by flavors, seasons, and science to develop my own
-              recipes and bring them to life. Sometimes I hold giveaways and
-              seasonal sales. In the past I have catered for{" "}
+              inspired by flavors, seasons, and science to develop recipes and
+              bring them to life. Sometimes I hold giveaways and sales. In the
+              past I have catered for{" "}
               <a href="https://www.seedandsoulclub.org/" target="_blank">
                 Seed & Soul Club
               </a>{" "}
