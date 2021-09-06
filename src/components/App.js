@@ -12,14 +12,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="span12">
-            <Link to="/">
-              <img id="logo" src={Logo} alt="Julia's Pies" />
-            </Link>
-          </div>
-        </div>
-
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
