@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 import InstagramFeed from "./InstagramFeed";
 
 const Home = () => (
-  <div className="container">
+  <div>
     <div className="content">
       <header>
-        <h1>Julia’s Pies</h1>
+        <div className="container">
+          <h1>Julia’s Pies</h1>
+        </div>
       </header>
 
-      <main>
+      <main className="container">
         <div className="row">
           <div className="span8">
             <p>
-              Julia’s Pies is the product of my lifelong obsession with pie. I’m
-              inspired by flavors, seasons, and science to develop recipes and
-              bring them to life. Sometimes I hold giveaways and sales. In the
-              past I have catered for{" "}
+              Julia’s Pies is a pie shop for family and friends. It is the
+              product of my lifelong obsession with pie. My recipes are inspired
+              by seasonality, food science, and nostalgia. Sometimes I hold
+              giveaways and sales; in the past I have also catered for{" "}
               <a href="https://www.seedandsoulclub.org/" target="_blank">
                 Seed & Soul Club
               </a>{" "}
@@ -29,17 +31,14 @@ const Home = () => (
               </a>{" "}
               events.
             </p>
-            <p>
-              Interested in pie? Food science? Techniques? Recipes? Reach out
-              anytime!
-            </p>
+            <p>Interested in pie? Techniques? Recipes? Reach out anytime!</p>
           </div>
         </div>
 
         <InstagramFeed />
       </main>
 
-      <footer>
+      <footer className="container">
         <div className="footer-item">
           <div className="heading-sm">Instagram</div>
           <div>
