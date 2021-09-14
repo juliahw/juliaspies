@@ -11,6 +11,15 @@ function range(start, end) {
 
 function InstagramFeed() {
   const [images, setImages] = useState(undefined);
+  const [loading, setLoading] = useState(
+    Array(imageCount).map(() => ({ loading: true }))
+  );
+
+  const setImageLoaded = (i) => {
+    const loadingCopy = [...loading];
+    loadingCopy[i] = false;
+    setLoading(loadingCopy);
+  };
 
   useEffect(() => {
     async function fetchImages() {
@@ -26,34 +35,44 @@ function InstagramFeed() {
 
       const response = await fetch(instagramUrl);
       const responseJson = await response.json();
+
       setImages(responseJson.data);
     }
 
     fetchImages();
   }, []);
 
-  const renderImage = (imageIndex) => {
-    const content = images ? (
-      <a href={images[imageIndex].permalink} target="_blank">
-        <img src={images[imageIndex].media_url} />
-      </a>
-    ) : (
-      <div className="placeholder" id={`placeholder-${imageIndex}`} />
-    );
+  const renderImage = (i) => {
+    const content =
+      images && !loading[i] ? (
+        <>
+          <a href={images[i].permalink} target="_blank">
+            <img
+              src={images[i].media_url}
+              onLoad={() => {
+                setImageLoaded(i);
+              }}
+            />
+          </a>
+          <div className="overlay" />
+        </>
+      ) : (
+        <div className="placeholder" id={`placeholder-${i}`} />
+      );
 
     return (
-      <div className="span4" key={`instagram-image-${imageIndex}`}>
+      <div className="span4 image-container" key={`instagram-image-${i}`}>
         {content}
       </div>
     );
   };
 
-  const renderRow = (rowIndex) => {
-    const start = imagesPerRow * rowIndex;
+  const renderRow = (i) => {
+    const start = imagesPerRow * i;
     const end = start + imagesPerRow;
 
     return (
-      <div className="row" key={`instagram-row-${rowIndex}`}>
+      <div className="row" key={`instagram-row-${i}`}>
         {range(start, end).map(renderImage)}
       </div>
     );
