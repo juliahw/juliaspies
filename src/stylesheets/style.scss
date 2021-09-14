@@ -46,11 +46,11 @@ header {
 
 main {
   flex: 1 0 auto;
+  margin-bottom: $lh;
 }
 
 footer {
   flex-shrink: 0;
-  margin-top: $lh * 2;
   padding-top: $lh;
   padding-bottom: $lh;
   display: flex;
@@ -111,16 +111,20 @@ a:visited {
 // ----------------------------------------------------------------------------
 
 #instagram-feed {
+  margin-top: $lh;
+
   img {
-    margin-top: $lh;
     display: block;
     max-width: 100%;
-    border-radius: 6px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    transition: all 0.05s ease-in-out;
 
     &:hover {
-      opacity: 0.75;
-      box-shadow: 0 0 0 ($lh / 5) $green;
-      transition: opacity 0.05s ease-out, box-shadow 0.05s;
+      bottom: 5px;
+      right: 5px;
+      box-shadow: 5px 5px 0 $red;
     }
   }
 
