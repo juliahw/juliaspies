@@ -15,10 +15,10 @@ const Home = () => (
         <div className="row">
           <div className="span8">
             <p>
-              Julia’s Pies is a pie shop for family and friends. It is the
-              product of my lifelong obsession with pie. My recipes are inspired
-              by seasonality, food science, and nostalgia. Sometimes I hold
-              giveaways and sales; in the past I have also catered for{" "}
+              Julia’s Pies is a pie shop for family and friends. My recipes are
+              inspired for the most part by seasonality, food science, and
+              nostalgia. Sometimes I hold giveaways and sales; in the past I
+              have also catered for{" "}
               <a href="https://www.seedandsoulclub.org/" target="_blank">
                 Seed & Soul Club
               </a>{" "}
