@@ -7,9 +7,4 @@ import App from "./components/App";
 import "./stylesheets/grid.min.css";
 import "./stylesheets/style.scss";
 
-ReactDOM.render(
-  <HashRouter>
-    <App />
-  </HashRouter>,
-  document.getElementById("react-root")
-);
+ReactDOM.render(<App />, document.getElementById("react-root"));
