@@ -45,17 +45,15 @@ function InstagramFeed() {
   const renderImage = (i) => {
     const content =
       images && !loading[i] ? (
-        <>
-          <a href={images[i].permalink} target="_blank">
-            <img
-              src={images[i].media_url}
-              onLoad={() => {
-                setImageLoaded(i);
-              }}
-            />
-          </a>
+        <a href={images[i].permalink} target="_blank">
+          <img
+            src={images[i].media_url}
+            onLoad={() => {
+              setImageLoaded(i);
+            }}
+          />
           <div className="overlay" />
-        </>
+        </a>
       ) : (
         <div className="placeholder" id={`placeholder-${i}`} />
       );
