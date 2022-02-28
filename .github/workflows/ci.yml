@@ -18,7 +18,7 @@ jobs:
     - uses: stepchowfun/toast/.github/actions/toast@main
       with:
         tasks: build
-        repo: juliahw/juliaspies
+        docker_repo: juliahw/juliaspies
         write_remote_cache: ${{ github.event_name == 'push' }}
     - uses: JamesIves/github-pages-deploy-action@4.1.0
       if: github.ref == 'refs/heads/master'
