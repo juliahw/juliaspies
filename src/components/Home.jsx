@@ -17,9 +17,9 @@ function Home() {
             <div className="span12">
               <p>
                 Julia’s Pies is a pie shop for family and friends. My recipes
-                are inspired for the most part by seasonality, food science, and
-                nostalgia. Sometimes I hold giveaways and sales; in the past I
-                have also catered for{" "}
+                are inspired by California produce, food culture, food science,
+                and personal nostalgia. Sometimes I hold giveaways and sales; in
+                the past I have also catered for{" "}
                 <a href="https://www.seedandsoulclub.org/" target="_blank">
                   Seed & Soul Club
                 </a>{" "}
