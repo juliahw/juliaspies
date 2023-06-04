@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: main
+    branches:
+    - main
   pull_request:
   # Trigger a build every month to ensure the Instagram token is up-to-date.
   schedule:
