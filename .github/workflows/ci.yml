@@ -27,13 +27,13 @@ jobs:
         username: juliahw
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - uses: stepchowfun/toast/.github/actions/toast@main
+    - uses: stepchowfun/toast/.github/actions/toast@v0.47.4
       with:
         tasks: build
         docker_repo: juliahw/juliaspies
         write_remote_cache: ${{ github.event_name == 'push' }}
 
-    - uses: JamesIves/github-pages-deploy-action@4.1.0
+    - uses: JamesIves/github-pages-deploy-action@v4.4.2
       if: github.ref == 'refs/heads/main'
       with:
         branch: gh-pages
