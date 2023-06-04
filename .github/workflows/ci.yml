@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   ci:
+    name: CI
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +34,7 @@ jobs:
         write_remote_cache: ${{ github.event_name == 'push' }}
 
     - uses: JamesIves/github-pages-deploy-action@4.1.0
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       with:
         branch: gh-pages
         folder: dist
