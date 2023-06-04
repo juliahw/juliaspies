@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import cx from "classnames";
+import React, { useEffect, useState } from 'react';
 
 const rows = 2;
 const imagesPerRow = 3;
@@ -12,7 +11,7 @@ function range(start, end) {
 function InstagramFeed() {
   const [images, setImages] = useState(undefined);
   const [loading, setLoading] = useState(
-    Array(imageCount).map(() => ({ loading: true }))
+    Array(imageCount).map(() => ({ loading: true })),
   );
 
   const setImageLoaded = (i) => {
@@ -23,12 +22,12 @@ function InstagramFeed() {
 
   useEffect(() => {
     async function fetchImages() {
-      const instagramTokenFile = await fetch("instagramToken.txt");
+      const instagramTokenFile = await fetch('instagramToken.txt');
       const token = await instagramTokenFile.text();
 
-      const instagramUrl = new URL("https://graph.instagram.com/me/media");
+      const instagramUrl = new URL('https://graph.instagram.com/me/media');
       instagramUrl.search = new URLSearchParams({
-        fields: ["id", "media_url", "permalink"],
+        fields: ['id', 'media_url', 'permalink'],
         limit: imageCount,
         access_token: token,
       });
@@ -43,20 +42,19 @@ function InstagramFeed() {
   }, []);
 
   const renderImage = (i) => {
-    const content =
-      images && !loading[i] ? (
-        <a href={images[i].permalink} target="_blank">
-          <img
-            src={images[i].media_url}
-            onLoad={() => {
-              setImageLoaded(i);
-            }}
-          />
-          <div className="overlay" />
-        </a>
-      ) : (
-        <div className="placeholder" id={`placeholder-${i}`} />
-      );
+    const content = images && !loading[i] ? (
+      <a href={images[i].permalink} target="_blank" rel="noreferrer">
+        <img
+          src={images[i].media_url}
+          onLoad={() => {
+            setImageLoaded(i);
+          }}
+        />
+        <div className="overlay" />
+      </a>
+    ) : (
+      <div className="placeholder" id={`placeholder-${i}`} />
+    );
 
     return (
       <div className="span4 image-container" key={`instagram-image-${i}`}>

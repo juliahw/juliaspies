@@ -1,12 +1,11 @@
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyHo7kexPhBzR48XNnu4u2ztKE5W3QyShCJnb2XoISJU0YCq9-RjXLEhA/exec";
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHo7kexPhBzR48XNnu4u2ztKE5W3QyShCJnb2XoISJU0YCq9-RjXLEhA/exec';
 
 async function getInstagramToken() {
   const url = new URL(GOOGLE_SCRIPT_URL);
   url.search = new URLSearchParams({
-    action: "getInstagramToken",
+    action: 'getInstagramToken',
   });
 
   const response = await fetch(url);
@@ -18,19 +17,19 @@ async function getInstagramToken() {
 class InstagramTokenPlugin {
   apply(compiler) {
     compiler.hooks.emit.tapPromise(
-      "InstagramTokenPlugin",
+      'InstagramTokenPlugin',
       async (compilation) => {
         const instagramToken = await getInstagramToken();
 
-        compilation.assets["instagramToken.txt"] = {
-          source: function () {
+        compilation.assets['instagramToken.txt'] = {
+          source() {
             return instagramToken;
           },
-          size: function () {
+          size() {
             return instagramToken.length;
           },
         };
-      }
+      },
     );
   }
 }

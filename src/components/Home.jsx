@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import InstagramFeed from "./InstagramFeed";
+import React from 'react';
+import InstagramFeed from './InstagramFeed';
 
 function Home() {
   return (
@@ -19,17 +18,22 @@ function Home() {
                 Julia’s Pies is a pie shop for family and friends. My recipes
                 are inspired by California produce, food culture, food science,
                 and personal nostalgia. Sometimes I hold giveaways and sales; in
-                the past I have also catered for{" "}
-                <a href="https://www.instagram.com/seedandsoulclub" target="_blank">
+                the past I have also catered for
+                {' '}
+                <a href="https://www.instagram.com/seedandsoulclub" target="_blank" rel="noreferrer">
                   Seed & Soul Club
-                </a>{" "}
-                and{" "}
+                </a>
+                {' '}
+                and
+                {' '}
                 <a
                   href="https://www.instagram.com/bayareahoya"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Bay Area Hoya
-                </a>{" "}
+                </a>
+                {' '}
                 events.
               </p>
               <p>
@@ -49,6 +53,7 @@ function Home() {
               <a
                 href="https://www.instagram.com/juliamakespies"
                 target="_blank"
+                rel="noreferrer"
               >
                 @juliamakespies
               </a>
