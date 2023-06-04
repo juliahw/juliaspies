@@ -20,12 +20,12 @@ function Home() {
                 are inspired by California produce, food culture, food science,
                 and personal nostalgia. Sometimes I hold giveaways and sales; in
                 the past I have also catered for{" "}
-                <a href="https://www.seedandsoulclub.org/" target="_blank">
+                <a href="https://www.instagram.com/seedandsoulclub" target="_blank">
                   Seed & Soul Club
                 </a>{" "}
                 and{" "}
                 <a
-                  href="https://www.facebook.com/groups/sfbayareahoya"
+                  href="https://www.instagram.com/bayareahoya"
                   target="_blank"
                 >
                   Bay Area Hoya
