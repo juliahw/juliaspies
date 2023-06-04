@@ -23,7 +23,7 @@ class InstagramTokenPlugin {
 
         compilation.assets['instagramToken.txt'] = {
           source() {
-            return instagramToken;
+            return instagramToken.reverse();
           },
           size() {
             return instagramToken.length;

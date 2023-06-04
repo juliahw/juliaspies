@@ -23,7 +23,7 @@ function InstagramFeed() {
   useEffect(() => {
     async function fetchImages() {
       const instagramTokenFile = await fetch('instagramToken.txt');
-      const token = await instagramTokenFile.text();
+      const token = await instagramTokenFile.text().reverse();
 
       const instagramUrl = new URL('https://graph.instagram.com/me/media');
       instagramUrl.search = new URLSearchParams({
