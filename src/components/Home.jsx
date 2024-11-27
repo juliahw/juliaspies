@@ -16,9 +16,8 @@ function Home() {
             <div className="span12">
               <p>
                 Julia’s Pies is a pie shop for family and friends. My recipes
-                are inspired by California produce, food culture, food science,
-                and personal nostalgia. Sometimes I hold giveaways and sales; in
-                the past I have also catered for
+                are inspired by California food culture and personal nostalgia. Sometimes I hold giveaways and sales; in
+                the past I have collaborated with <a href="https://www.breadbellysf.com" target='_blank' rel="noreferrer">Breadbelly</a> and catered for
                 {' '}
                 <a href="https://www.instagram.com/seedandsoulclub" target="_blank" rel="noreferrer">
                   Seed & Soul Club
@@ -39,7 +38,7 @@ function Home() {
               <p>
                 My goal is always the same: to serve you the best pie possible.
               </p>
-              <p>Interested in pie? Techniques? Recipes? Reach out anytime!</p>
+              <p>Interested in pie? Reach out anytime!</p>
             </div>
           </div>
 
