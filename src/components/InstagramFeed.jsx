@@ -25,7 +25,7 @@ function InstagramFeed() {
       const instagramTokenFile = await fetch('instagramToken.txt');
       const token = (await instagramTokenFile.text()).split('').reverse().join('');
 
-      const instagramUrl = new URL('https://graph.instagram.com/me/media');
+      const instagramUrl = new URL('https://graph.instagram.com/v21.0/8824439911014964/media');
       instagramUrl.search = new URLSearchParams({
         fields: ['id', 'media_url', 'permalink'],
         limit: imageCount,
@@ -46,6 +46,7 @@ function InstagramFeed() {
       <a href={images[i].permalink} target="_blank" rel="noreferrer">
         <img
           src={images[i].media_url}
+          alt={`Instagram feed ${i + 1}`}
           onLoad={() => {
             setImageLoaded(i);
           }}
